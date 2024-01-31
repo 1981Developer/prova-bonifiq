@@ -11,16 +11,17 @@ namespace ProvaPub.Controllers
 	[Route("[controller]")]
 	public class Parte1Controller :  ControllerBase
 	{
-		private readonly RandomService _randomService;
+		//private readonly RandomService _randomService;
+        private readonly Random _random;
 
-		public Parte1Controller(RandomService randomService)
+        public Parte1Controller()
 		{
-			_randomService = randomService;
+			_random = new Random();
 		}
 		[HttpGet]
 		public int Index()
 		{
-			return _randomService.GetRandom();
+			return _random.Next();
 		}
 	}
 }
